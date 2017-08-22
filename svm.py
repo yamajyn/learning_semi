@@ -43,7 +43,8 @@ if __name__ == "__main__":
                         train_data=np.vstack((train_data,feature))
                     train_label=np.append(train_label,bell_num1)
             #テストデータを作成
-            file_name = "learning_sample/%d_%d_%d.wav" % (bell_num1,noise_num,level_nums[8])
+            #file_name = "learning_sample/%d_%d_%d.wav" % (bell_num1,noise_num,level_nums[8])
+            file_name = "learning_sample/test/te0%d.wav" % (bell_num1)
             feature = get_feature(file_name,nfft,nceps)
             if len(test_data) == 0:
                 test_data=feature
@@ -65,7 +66,8 @@ if __name__ == "__main__":
                         train_data=np.vstack((train_data,feature))
                     train_label=np.append(train_label,bell_num2)
             #テストデータを作成
-            file_name = "learning_sample/%d_%d_%d.wav" % (bell_num2,noise_num,level_nums[8])
+            #file_name = "learning_sample/%d_%d_%d.wav" % (bell_num2,noise_num,level_nums[8])
+            file_name = "learning_sample/test/te0%d.wav" % (bell_num2)
             feature = get_feature(file_name,nfft,nceps)
             if len(test_data) == 0:
                 test_data=feature
@@ -94,3 +96,4 @@ if __name__ == "__main__":
         #結果算出
         score=accuracy_score(test_label, test_pred)
         print (pair,score)
+        print classification_report(test_label, test_pred)
