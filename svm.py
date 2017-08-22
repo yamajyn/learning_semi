@@ -22,8 +22,8 @@ if __name__ == "__main__":
         train_label = np.array([])
         test_data = np.empty((0,12),float)
         test_label = np.array([])
-        noise_nums = range(1,12)
-        level_nums = range(0,10)
+        noise_nums = range(1,2)
+        level_nums = range(0,9)
         random.shuffle(noise_nums)
 
         nfft = 2048  # FFTのサンプル数
